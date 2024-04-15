@@ -59,6 +59,7 @@ public class TestBlock extends Block implements BlockEntityProvider {
         @Override
         public void render(TestBlockEntity blockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
             matrices.push();
+            matrices.translate(0.5, 0, 0.5);
             POLE.render(matrices);
             matrices.pop();
         }
