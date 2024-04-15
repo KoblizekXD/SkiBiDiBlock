@@ -1,0 +1,18 @@
+/give @s biblock:bloomer
+/give @s biblock:bloomery
+/setblock 55 -61 8 biblock:bloomery
+/setblock ~ ~ ~ biblock:bloomery
+/setblock ~ ~ ~ biblock:demo_block
+/setblock ~ ~ ~ biblock:test
+/spectate
+/gamemode spectator
+/gamemode creative
+/setblock ~ ~ ~ biblock:test
+/tp 0 5 0
+/setblock ~ ~ ~ biblock:test
+/tp 0 50 0
+/setblock ~ ~ ~ biblock:test
+/tp 0 50 0
+/time set day
+/setblock 51 -61 -3 biblock:test
+/setblock ~ ~ ~ biblock:test
