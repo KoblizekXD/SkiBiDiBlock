@@ -1,10 +1,10 @@
 package lol.koblizek.biblock.model.loader;
 
-import net.minecraft.client.render.BufferBuilder;
-import net.minecraft.client.render.Tessellator;
-import net.minecraft.client.render.VertexFormat;
-import net.minecraft.client.render.VertexFormats;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,6 +113,8 @@ public record Face(Style style, List<Entry> faceEntries) implements Instructable
                 }
                 buffer.next();
             }
+            RenderSystem.setShader(GameRenderer::getPositionColorTexProgram);
+            RenderSystem.setShaderTexture(0, new Identifier("minecraft", "textures/block/stone.png"));
             tessellator.draw();
         }  else {
             WavefrontModel.LOGGER.warn("Non-triangulated face detected, skipping!");

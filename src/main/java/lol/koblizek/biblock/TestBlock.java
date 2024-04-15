@@ -32,6 +32,11 @@ public class TestBlock extends Block implements BlockEntityProvider {
         return new TestBlockEntity(pos, state);
     }
 
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.INVISIBLE;
+    }
+
     public static class TestBlockEntity extends BlockEntity {
         public TestBlockEntity(BlockPos pos, BlockState state) {
             super(DEMO_BLOCK_ENTITY, pos, state);
